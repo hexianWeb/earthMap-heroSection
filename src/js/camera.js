@@ -14,7 +14,7 @@ export default class Camera {
     this.debug = this.experience.debug;
     this.debugActive = this.experience.debug.active;
 
-    this.position = new THREE.Vector3(0, 0, 9);
+    this.position = new THREE.Vector3(0, 0, 3.5);
     this.target = new THREE.Vector3(0, 0, 0);
 
     this.setInstance();

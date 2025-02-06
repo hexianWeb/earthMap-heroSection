@@ -10,5 +10,11 @@ export default [
       'textures/environmentMap/pz.jpg',
       'textures/environmentMap/nz.jpg'
     ]
+  },
+  {
+    name: 'earthTexture',
+    type: 'texture',
+    // path: 'textures/earthMap/amcharts.pixelMap (3).png'
+    path: 'textures/earthMap/chart (7).png'
   }
 ];
