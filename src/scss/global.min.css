@@ -1,0 +1,1 @@
+*{font-family:"Wallpoet", serif;font-weight:400;font-style:normal}.neumorphic-button{@apply rounded-full bg-gray-200 text-black px-6 py-3 text-lg font-semibold;box-shadow:1px 1px 2px #b5b5b5, -4px -4px 8px #ffffff;transition:all 0.3s ease}.neumorphic-button:hover{box-shadow:1px 1px 2px #b5b5b5, -4px -4px 8px #ffffff;transform:translateY(1px)}

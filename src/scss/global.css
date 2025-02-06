@@ -9,6 +9,7 @@
   box-shadow: 1px 1px 2px #b5b5b5, -4px -4px 8px #ffffff;
   transition: all 0.3s ease;
 }
+
 .neumorphic-button:hover {
   box-shadow: 1px 1px 2px #b5b5b5, -4px -4px 8px #ffffff;
   transform: translateY(1px);
