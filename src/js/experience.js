@@ -5,7 +5,7 @@ import Renderer from './renderer.js';
 import sources from './sources.js';
 import Debug from './utils/debug.js';
 import IMouse from './utils/imouse.js';
-import Resources from './Utils/resources.js';
+import Resources from './utils/resources.js';
 import Sizes from './utils/sizes.js';
 import Stats from './utils/stats.js';
 import Time from './utils/time.js';
