@@ -1,180 +1,100 @@
-[node]: https://nodejs.org/en
-[yarn]: https://yarnpkg.com
-[pnpm]: https://pnpm.io
-[demo]: https://vite-three-js.d1a.app
-[license]: https://github.com/doinel1a/vite-three-js/blob/main/LICENSE
-[code-of-conduct]: https://github.com/doinel1a/vite-three-js/blob/main/CODE_OF_CONDUCT.md
-[issues]: https://github.com/doinel1a/vite-three-js/issues
-[pulls]: https://github.com/doinel1a/vite-three-js/pulls
-[browserslist]: https://browsersl.ist/#q=last+3+versions%2C%3E+0.2%25%2C+not+dead
-[graphviz]: https://www.graphviz.org/download
-[commitlint]: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
-[webpack-three-js]: https://github.com/doinel1a/webpack-three-js
-[react-icon]: https://skillicons.dev/icons?i=react
-[ts-icon]: https://skillicons.dev/icons?i=ts
-[js-icon]: https://skillicons.dev/icons?i=js
-[tailwind-icon]: https://skillicons.dev/icons?i=tailwind
-[chrome-icon]: https://github.com/alrra/browser-logos/blob/main/src/chrome/chrome_64x64.png
-[firefox-icon]: https://github.com/alrra/browser-logos/blob/main/src/firefox/firefox_64x64.png
-[edge-icon]: https://github.com/alrra/browser-logos/blob/main/src/edge/edge_64x64.png
-[opera-icon]: https://github.com/alrra/browser-logos/blob/main/src/opera/opera_64x64.png
-[safari-icon]: https://github.com/alrra/browser-logos/blob/main/src/safari/safari_64x64.png
+# 官网概念网站 (Fake Website)
 
-# Vite Three JS — Template
-
-This boilerplate starter template is the ultimate solution to help you getting started on your project in no time, without the hassle of setting up and configuring your environment from scratch each time you start developing. <br />
-It's ideal for front-end engineers who want to build modern, fast and reliable **webgl** web applications with the latest cutting edge technologies such as **Three.JS**, **GLSL**, **JavaScript**, **TailwindCSS**, **Vite**, **ESLint**, **Prettier**, **Husky** and much more!
-
-**[Demo][demo]** | **[Bug(label: bug)][issues]** | **[Feature(label: enhancement)][issues]**
-
-## :bookmark: Table of contents
-
-- :computer: [Getting started](#computer-getting-started "Go to 'Getting started' section")
-- :battery: [Features](#battery-features "Go to 'Features' section")
-- :arrows_clockwise: [Versions](#arrows_clockwise-versions "Go to 'Versions' section")
-- :globe_with_meridians: [Browsers support](#globe_with_meridians-browsers-support "Go to 'Browsers support' section")
-- :busts_in_silhouette: [Contribute](#busts_in_silhouette-contribute "Go to 'Contribute' section")
-- :bookmark_tabs: [License](#bookmark_tabs-license "Go to 'License' section")
-- :gem: [Acknowledgements](#gem-acknowledgements "Go to 'Acknowledgements' section")
+![Hero Section](https://raw.githubusercontent.com/hexianWeb/earthMap-heroSection/main/heroSection.png)
+## 目录
+1. [项目概述](#项目概述)
+2. [项目结构](#项目结构)
+3. [安装步骤](#安装步骤)
+4. [常见问题](#常见问题)
 
 ---
 
-## :computer: Getting started
+## 项目概述
 
-### Prerequisites:
+本项目是一个基于 Three.js 和 Vite 的 WebGL 应用程序，用于创建交互式的三维场景。项目集成了多种工具和技术，以确保高效的开发和优化的性能。
 
-- JavaScript runtime **[node.js][node]**;
-- **(OPTIONAL)** Alternative package manager:
-  - **[PNPM][pnpm]** `npm install --global pnpm` <br /> or
-  - **[Yarn][yarn]** `npm install --global yarn`
+**注意**：本项目只是一个简易的初级 threejs 应用项目，如果需要更多的threejs 教育资源，请前往[ICE - 图形学社区](https://www.icegl.cn/)，或者前往[TvT.js](https://docs.icegl.cn/)获得更多的教育资源
+---
 
-### Start developing:
+## 项目结构
 
-- Get the repository:
-  - click **"Use this template"** &nbsp; or &nbsp; **"Fork"** button <br /> alternately
-  - **clone** the repository through your terminal: <br />
-    `git clone https://github.com/doinel1a/vite-three-js YOUR-PROJECT-NAME`;
-- Open your terminal or code editor to the path your project is located, and run:
-  | | **NPM** | **PNPM** | **Yarn** |
-  | ------------------------------------------------ | ----------------- | -------------- | -------------- |
-  | To **install** the dependencies | `npm install` | `pnpm install` | `yarn install` |
-  | To **run** the **development server** | `npm run dev` | `pnpm dev` | `yarn dev` |
-  | To **build** your app **for production** | `npm run build` | `pnpm build` | `yarn build` |
-  | To **preview** your **production optimized app** | `npm run preview` | `pnpm preview` | `yarn preview` |
+项目的目录结构清晰且模块化，方便开发者进行维护和扩展。以下是主要目录及其说明：
 
-[Back to :arrow_up:](#vite-three-js--template "Back to 'Table of contents' section")
+### 根目录
+- **README.md**：项目说明文档。
+- **package.json**：项目配置文件，包含依赖项和脚本。
+- **pnpm-lock.yaml**：依赖锁定文件，确保依赖版本一致。
+- **vite.config.js**：Vite 配置文件，定义了构建和开发服务器设置。
+- **index.html**：主页面文件，入口点。
+
+### 源代码目录 (`src`)
+- **shaders**：包含 GLSL 着色器代码，分为多个子目录（如 `halftone`, `glass`, `includes` 等）。
+- **js**：JavaScript 文件，进一步细分为多个子模块：
+  - **utils**：实用工具函数（如 `debug.js`, `event-emitter.js`, `imouse.js` 等）。
+  - **tools**：辅助工具（如 `dom.js`, `misc.js`）。
+  - **world**：世界场景相关代码（如 `environment.js`, `physics-world.js`, `world.js`）。
+  - **components**：UI 组件（如 `center.js`, `float.js`, `glass-wall.js`）。
+- **scss**：SCSS 文件（如 `global.scss`），用于样式预处理。
+- **css**：CSS 文件（如 `global.css`），用于最终样式输出。
+
+### 公共资源目录 (`public`)
+- 包含静态资源文件，如 `sitemap.xml` 和字体文件（如 `helvetiker_bold.typeface.json`, `机械风.typeface.json`）。
+
+### 测试目录 (`tests`)
+- 包含浏览器测试文件（如 `browsers.test.js`），用于自动化测试。
 
 ---
 
-## :battery: Features
+## 安装步骤
 
-This repository comes 🔋 packed with:
+### 前提条件
+确保你已经安装了以下工具：
+- Node.js (建议版本 ^18.12.0 || ^20.9.0 || >=22.0)
+- pnpm (推荐使用 pnpm 作为包管理工具)
 
-- **Three.JS**: A JavaScript library built on top of **WebGL** that provides an abstraction layer for rendering interactive 3D and 2D scenes in the web browser;
-- **TailwindCSS**: A utility-first CSS framework that provides predefined classes for common styles and layout patterns, allowing quick styling without writing custom CSS;
-- **SASS**: A CSS preprocessor that adds features such as variables, nesting, and mixins to CSS, making it easier to write and maintain large CSS codebases;
-- **PostCSS**: A tool for transforming CSS with JavaScript plugins, allowing to add new features to CSS and improve the development process;
-- **Playwright**: A library for automating web browser interactions, allowing the writing of end-to-end tests and perform browser automation tasks;
-- **Vite**: A build tool and development server that provides fast and efficient development and production builds for modern web applications;
+### 步骤 1：克隆仓库
+```bash
+git clone https://github.com/hexianWeb/earthMap-heroSection.git
+```
 
-And with tools that enhance the development experience:
+### 步骤 2：安装依赖
+使用 pnpm 安装项目所需的依赖：
+```bash
+pnpm install
+```
 
-- **ESLint**: A tool for enforcing coding standards and identifying potential errors in the code;
-- **Prettier**: A code formatter that automatically formats code to conform to a consistent style, making it easier to read and maintain;
-- **Husky**: A Git hook manager that allows easy set up and configuration of Git hooks, which are scripts that run at certain points in the Git workflow;
-- **Commitlint**: A tool for enforcing commit message conventions in Git repositories, helping to ensure consistent and informative commit messages;
+### 步骤 3：启动开发服务器
+启动 Vite 开发服务器：
+```bash
+pnpm run dev
+```
+这将启动一个本地开发服务器，默认情况下可以在 `http://localhost:3000` 访问。
 
-[Back to :arrow_up:](#vite-three-js--template "Back to 'Table of contents' section")
-
----
-
-## :arrows_clockwise: Versions
-
-This repository comes configured with 2 of the industry standards for development tools: **Webpack** and **Vite**. <br />
-Both tools support **SWC (Speedy Web Compiler)**, a **Rust-based compiler**; Vite is optimized for it out of the box.
-
-### Vite (SWC compiler)
-
-Is a simple and fast solution thanks to it's "zero-config" approach which offers a smoother development experience.
-
-|                   React - TypeScript                   |                   React - JavaScript                   |     |       Vanilla TypeScript        |     Vanilla JavaScript      |
-| :----------------------------------------------------: | :----------------------------------------------------: | :-: | :-----------------------------: | :-------------------------: |
-| ![React][react-icon] & ![TS][ts-icon] <br /> **Soon!** | ![React][react-icon] & ![JS][js-icon] <br /> **Soon!** |     | ![TS][ts-icon] <br /> **Soon!** | ![JS][js-icon] <br /> **/** |
-
-### Webpack (Babel compiler)
-
-Is more a flexible solution, capable of handling complex configurations.
-
-|                   React - TypeScript                   |                   React - JavaScript                   |     |       Vanilla TypeScript        |                 Vanilla JavaScript                 |
-| :----------------------------------------------------: | :----------------------------------------------------: | :-: | :-----------------------------: | :------------------------------------------------: |
-| ![React][react-icon] & ![TS][ts-icon] <br /> **Soon!** | ![React][react-icon] & ![JS][js-icon] <br /> **Soon!** |     | ![TS][ts-icon] <br /> **Soon!** | ![JS][js-icon] <br /> **[Repo][webpack-three-js]** |
-
-[Back to :arrow_up:](#vite-three-js--template "Back to 'Table of contents' section")
+### 步骤 4：构建生产版本
+当你准备部署时，可以构建生产版本：
+```bash
+pnpm run build
+```
+构建后的文件将位于 `dist` 目录中。
 
 ---
 
-## :globe_with_meridians: Browsers support
+## 常见问题
 
-The provided configuration ensures **92.3%** coverage for all browsers, in particular of the following:
+### Q: 我遇到了依赖安装失败的问题，应该怎么办？
+A: 确保你的 Node.js 和 pnpm 版本符合要求。如果问题仍然存在，尝试清理缓存并重新安装依赖：
+```bash
+pnpm cache clean --all
+pnpm install
+```
 
-|            Chrome             |             Firefox              |             Edge             |        Opera         | Safari                       |
-| :---------------------------: | :------------------------------: | :--------------------------: | :------------------: | ---------------------------- |
-| ![Google Chrome][chrome-icon] | ![Mozilla Firefox][firefox-icon] | ![Microsoft Edge][edge-icon] | ![Opera][opera-icon] | ![Apple Safari][safari-icon] |
+### Q: 如何调试 Three.js 场景中的问题？
+本项目集成了 tweakpane 只需要在url后跟 #debug 即可开启调试模式。
+```
+如: http://localhost:3000/#debug
+```
 
-**\*** In order to support a wider percentage of browsers, update the `./.browserslistrc` configuration file:
-
-1. `last 3 versions`: browser version;
-2. `> 0.2%`: browser usage statistics;
-3. `not dead`: whether the browser is officially supported;
-
-Update the configuration [here][browserslist] and check in real-time the **global browsers support**.
-
-**\* The more versions to support, larger JS and CSS bundles size will be.**
-
-[Back to :arrow_up:](#vite-three-js--template "Back to 'Table of contents' section")
 
 ---
 
-## :busts_in_silhouette: Contribute
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create.  
-Any contribution is greatly appreciated: big or small, it can be documentation updates, adding new features or something bigger.  
-Please check the [**contributing guide**][code-of-conduct] for details on how to help out and keep in mind that all commits must follow the **[conventional commit format][commitlint]**.
-
-### How to contribute:
-
-1.  **[Get started](#computer-getting-started "Go to 'Getting started' section");**
-2.  **For a new feature:**
-    1.  Create a new branch: `git checkout -b feat/NEW-FEATURE`;
-    2.  Add your changes to the staging area: `git add PATH/TO/FILENAME.EXTENSION`;
-    3.  Commit your changes: `git commit -m "feat: NEW FEATURE"`;
-    4.  Push your new branch: `git push origin feat/NEW-FEATURE`;
-3.  **For a bug fix:**
-    1.  Create a new branch: `git checkout -b fix/BUG-FIX`;
-    2.  Add your changes to the staging area: `git add PATH/TO/FILENAME.EXTENSION`;
-    3.  Commit your changes: `git commit -m "fix: BUG FIX"`;
-    4.  Push your new branch: `git push origin fix/BUG-FIX`;
-4.  **Open a new [pull request][pulls];**
-
-[Back to :arrow_up:](#vite-three-js--template "Back to 'Table of contents' section")
-
----
-
-## :bookmark_tabs: License
-
-All logos and trademarks are the property of their respective owners.  
-Everything else is distributed under the **MIT License**.  
-See the [LICENSE][license] file for more informations.
-
-[Back to :arrow_up:](#vite-three-js--template "Back to 'Table of contents' section")
-
----
-
-## :gem: Acknowledgements
-
-Special thanks to:
-
-- [alrra](https://github.com/alrra) for [browser-logos](https://github.com/alrra/browser-logos);
-- [tandpfun](https://github.com/tandpfun) for [skill-icons](https://github.com/tandpfun/skill-icons);
-
-[Back to :arrow_up:](#vite-three-js--template "Back to 'Table of contents' section")
+希望这份指南能帮助你顺利开始开发！如果有任何问题或需要进一步的帮助，请随时联系我或者加入[ICE - 图形学社区](https://www.icegl.cn/)，寻找互动问答版块。
